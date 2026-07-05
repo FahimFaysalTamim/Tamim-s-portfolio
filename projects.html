@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Detailed project write-ups by MD. Fahim Faysal Tamim.">
+  <meta name="author" content="MD. Fahim Faysal Tamim">
+  <title>Projects // Tamim</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap nav-inner">
+      <div class="brand">TAMIM<span>.</span>DEV</div>
+      <nav class="main-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#skills">Skills</a></li>
+          <li><a href="hobbies.html">Hobbies</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button id="theme-toggle" type="button" aria-label="Toggle dark or light mode">☾ DARK</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-banner wrap">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJqwSz0FyJ806viM2tbysWq5dxRJnzBJEZne6dn6GTSuf2TwxMtQj_HQTy&s=10"
+           alt="Brac University campus building, Dhaka">
+      <p class="fig-label" style="margin-top:1rem;">FIG. 11 — BUILD LOG (FULL)</p>
+      <h1>Projects</h1>
+      <p style="color: var(--ink-dim); max-width: 62ch;">
+        Everything below was built as coursework, self-study, or late-night curiosity —
+        spanning web development, systems programming, machine learning, and graphics.
+      </p>
+    </section>
+
+    <section class="wrap reveal">
+      <h2 class="section-title"><span class="num">01.</span> Blood Donation Management System</h2>
+      <div class="panel">
+        <p><b>Stack:</b> PHP, MySQL, HTML, CSS</p>
+        <p>
+          A web-based platform for managing blood donors, blood requests, and blood bank
+          records. The system supports donor and recipient registration, a secure login
+          flow, and an admin dashboard for reviewing requests and tracking inventory —
+          all backed by a normalized MySQL schema.
+        </p>
+        <p><a href="https://github.com/FahimFaysalTamim" target="_blank" rel="noopener">View on GitHub ↗</a></p>
+      </div>
+    </section>
+
+    <section class="wrap reveal">
+      <h2 class="section-title"><span class="num">02.</span> LinkedIn Clone (LinkUp)</h2>
+      <div class="panel">
+        <p><b>Stack:</b> PHP, MySQL, HTML, CSS</p>
+        <p>
+          A social networking prototype modeled after LinkedIn, with profile management,
+          post creation, and a feed. Focused on getting the fundamentals of
+          database-driven user interaction and session-based authentication right.
+        </p>
+        <p><a href="https://github.com/FahimFaysalTamim" target="_blank" rel="noopener">View on GitHub ↗</a></p>
+      </div>
+    </section>
+
+    <section class="wrap reveal">
+      <h2 class="section-title"><span class="num">03.</span> Mini VSFS — Virtual Simple File System</h2>
+      <div class="panel">
+        <p><b>Stack:</b> C, Linux, GCC</p>
+        <p>
+          A from-scratch, C-based virtual file system that simulates the core storage
+          structures of a real OS: superblocks, inodes, and directory entries. Two
+          command-line utilities, <code>mkfs_builder</code> and <code>mkfs_adder</code>,
+          initialize virtual disk images and insert files into them, with CRC32
+          checksums used throughout to guarantee file system integrity. This project is
+          also what inspired the "blueprint / schematic" look of this website.
+        </p>
+        <p><a href="https://github.com/FahimFaysalTamim" target="_blank" rel="noopener">View on GitHub ↗</a></p>
+      </div>
+    </section>
+
+    <section class="wrap reveal">
+      <h2 class="section-title"><span class="num">04.</span> Deep Learning Based Bank Fraud Detection System</h2>
+      <div class="panel">
+        <p><b>Stack:</b> Python, TensorFlow, Scikit-learn, Pandas, NumPy</p>
+        <p>
+          A fraud detection system that applies deep learning and classical ML techniques
+          to flag suspicious financial transactions in large transaction datasets. Work
+          included data preprocessing, feature engineering, and training/evaluating
+          deep learning models to improve classification accuracy on fraudulent patterns.
+        </p>
+        <p><a href="https://github.com/FahimFaysalTamim" target="_blank" rel="noopener">View on GitHub ↗</a></p>
+      </div>
+    </section>
+
+    <section class="wrap reveal">
+      <h2 class="section-title"><span class="num">05.</span> Amazing Bouncing Box Simulation</h2>
+      <div class="panel">
+        <p><b>Stack:</b> Python, PyOpenGL</p>
+        <p>
+          An interactive computer graphics simulation featuring bouncing and blinking
+          objects, with custom motion logic, collision handling, and animation built
+          directly on top of OpenGL functions.
+        </p>
+        <p><a href="https://github.com/FahimFaysalTamim" target="_blank" rel="noopener">View on GitHub ↗</a></p>
+      </div>
+    </section>
+
+    <section class="wrap reveal">
+      <p><a href="index.html">← Back to Home</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© 2026 MD. Fahim Faysal Tamim. All rights reserved.</p>
+      <p>Page location: <span id="page-location"></span></p>
+      <p>Last modified: <span id="last-modified"></span></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

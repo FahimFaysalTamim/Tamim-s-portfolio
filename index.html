@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal homepage of MD. Fahim Faysal Tamim — Computer Science student at Brac University, aspiring software and AI developer.">
+  <meta name="author" content="MD. Fahim Faysal Tamim">
+  <title>Tamim // Personal Homepage</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <!-- Internal CSS: small, page-specific tweaks that don't belong in the shared stylesheet -->
+  <style>
+    #contact .contact-form button { letter-spacing: .1em; }
+    .book-list li b { text-decoration: underline dotted var(--muted); text-underline-offset: 3px; }
+    .hero .role { font-weight: 600; }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap nav-inner">
+      <div class="brand">TAMIM<span>.</span>DEV</div>
+      <nav class="main-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#hobbies">Hobbies</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="projects.html">All Projects</a></li>
+          <li><a href="hobbies.html">All Hobbies</a></li>
+        </ul>
+      </nav>
+      <button id="theme-toggle" type="button" aria-label="Toggle dark or light mode">☾ DARK</button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ================= PERSONAL INFO ================= -->
+    <section class="hero wrap" id="top">
+      <div class="hero-photo-frame">
+        <img src="images/profile.jpg" alt="Portrait photo of MD. Fahim Faysal Tamim" width="190" height="190">
+      </div>
+      <div>
+        <p class="fig-label">FIG. 01 — IDENTITY</p>
+        <h1>MD. Fahim Faysal Tamim</h1>
+        <p class="role">Computer Science Student — Brac University // Aspiring Software &amp; AI Developer</p>
+        <p class="bio">
+          Hi, I'm Tamim. A Computer Science student passionate about AI, full-stack development,
+          and creating software that makes a difference. I enjoy transforming ideas into clean,
+          scalable solutions while continuously learning, building, and exploring new technologies.
+          Every project — including the ones I document on my
+          <a href="https://github.com/FahimFaysalTamim" target="_blank" rel="noopener">GitHub</a> —
+          is an opportunity to grow, innovate, and leave a meaningful impact.
+        </p>
+        <div class="hero-links">
+          <a href="https://www.linkedin.com/in/md-fahim-faysal-tamim-a5977a293" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a href="https://github.com/FahimFaysalTamim" target="_blank" rel="noopener">GitHub ↗</a>
+          <a href="mailto:fahimfaysaltamim2020@gmail.com">Email ↗</a>
+          <a href="#contact">Contact Me ↓</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PERSONAL INFO / ABOUT ================= -->
+    <section class="wrap reveal" id="about">
+      <p class="fig-label">FIG. 02 — PERSONAL INFO</p>
+      <h2 class="section-title"><span class="num">01.</span> About Me</h2>
+      <dl class="info-grid">
+        <div class="info-card">
+          <dt>Full Name</dt>
+          <dd>MD. Fahim Faysal Tamim</dd>
+        </div>
+        <div class="info-card">
+          <dt>Student ID</dt>
+          <dd>22301379</dd>
+        </div>
+        <div class="info-card">
+          <dt>Email</dt>
+          <dd><a href="mailto:fahimfaysaltamim2020@gmail.com">fahimfaysaltamim2020@gmail.com</a></dd>
+        </div>
+        <div class="info-card">
+          <dt>Phone</dt>
+          <dd>01776642898</dd>
+        </div>
+        <div class="info-card">
+          <dt>Location</dt>
+          <dd>Middle Badda, Dhaka, Bangladesh</dd>
+        </div>
+        <div class="info-card">
+          <dt>Department</dt>
+          <dd>Computer Science &amp; Engineering</dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- ================= EDUCATION ================= -->
+    <section class="wrap reveal" id="education">
+      <p class="fig-label">FIG. 03 — TIMELINE</p>
+      <h2 class="section-title"><span class="num">02.</span> Education</h2>
+      <div class="panel edu-item">
+        <div class="edu-year">2022 — Present</div>
+        <div class="edu-body">
+          <h3>B.S. in Computer Science &amp; Engineering</h3>
+          <p>
+            <a href="https://www.bracu.ac.bd/" target="_blank" rel="noopener"><b>Brac University</b></a>,
+            Dhaka, Bangladesh — currently taking <i>CSE 391: Programming for the Internet</i>,
+            among other core CSE coursework. Expected graduation: <b>2026</b>.
+            Course discussion happens on our
+            <a href="https://discord.com/channels/1513758023409995968/1513758024584527894" target="_blank" rel="noopener">CSE 391 Discord</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SKILLS ================= -->
+    <section class="wrap reveal" id="skills">
+      <p class="fig-label">FIG. 04 — TECHNICAL SKILLS</p>
+      <h2 class="section-title"><span class="num">03.</span> Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-block">
+          <h3>Programming Languages</h3>
+          <ul class="tag-list">
+            <li>C</li><li>C++</li><li>Python</li><li>PHP</li>
+          </ul>
+        </div>
+        <div class="skill-block">
+          <h3>Web Technologies</h3>
+          <ul class="tag-list">
+            <li>HTML</li><li>CSS</li><li>JavaScript</li><li>React</li>
+            <li>Tailwind CSS</li><li>PHP (Backend)</li><li>Node.js</li><li>Express.js</li>
+          </ul>
+        </div>
+        <div class="skill-block">
+          <h3>Databases &amp; Servers</h3>
+          <ul class="tag-list">
+            <li>MySQL</li><li>MongoDB</li><li>Apache</li><li>Nginx</li>
+          </ul>
+        </div>
+        <div class="skill-block">
+          <h3>Tools &amp; Platforms</h3>
+          <ul class="tag-list">
+            <li>VS Code</li><li>Git &amp; GitHub</li><li>Canva</li>
+            <li>Google Colab</li><li>Vercel</li><li>GitHub Pages</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= QUOTE ================= -->
+    <section class="wrap reveal">
+      <p class="fig-label">FIG. 05 — MOTTO</p>
+      <h2 class="section-title"><span class="num">04.</span> Favorite Quote</h2>
+      <blockquote class="quote">
+        “The woods are lovely, dark and deep,<br>
+        But I have promises to keep,<br>
+        And miles to go before I sleep,<br>
+        And miles to go before I sleep.”
+        <cite>— Franz Kafka, <i>Stopping by Woods on a Snowy Evening</i></cite>
+      </blockquote>
+    </section>
+
+    <!-- ================= BOOKS LIST ================= -->
+    <section class="wrap reveal">
+      <p class="fig-label">FIG. 06 — READING LIST</p>
+      <h2 class="section-title"><span class="num">05.</span> Favorite Books</h2>
+      <p style="color: var(--ink-dim); margin-top:-0.8rem;">
+        I'm especially drawn to the work of <b>Franz Kafka</b> — his short, unsettling stories
+        show up more than once on this list.
+      </p>
+      <ol class="book-list">
+        <li><b>Atomic Habits</b> — <span class="author">James Clear</span></li>
+        <li><b>The Power of Habit</b> — <span class="author">Charles Duhigg</span></li>
+        <li><b>The Castle</b> — <span class="author">Franz Kafka</span></li>
+        <li><b>The Judgement</b> — <span class="author">Franz Kafka</span></li>
+        <li><b>Before the Law</b> — <span class="author">Franz Kafka</span></li>
+        <li><b>Bohubrihi</b> — <span class="author">Humayun Ahmed</span></li>
+      </ol>
+    </section>
+
+    <!-- ================= PROJECTS TABLE ================= -->
+    <section class="wrap reveal" id="projects">
+      <p class="fig-label">FIG. 07 — BUILD LOG</p>
+      <h2 class="section-title"><span class="num">06.</span> Projects</h2>
+      <div class="table-scroll">
+        <table class="projects-table">
+          <caption>A snapshot of things I've built. Full write-ups on the <a href="projects.html">Projects page</a>.</caption>
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Project</th>
+              <th>Tech Stack</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="category" data-label="Category" rowspan="2">Web Development</td>
+              <td data-label="Project"><b>Blood Donation Management System</b></td>
+              <td data-label="Tech Stack">PHP, MySQL, HTML, CSS</td>
+              <td data-label="Description">
+                A web-based system for managing blood donors, blood requests, and blood
+                bank records. Includes user registration, a login system, and an admin
+                dashboard backed by a relational database.
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Project"><b>LinkedIn Clone (LinkUp)</b></td>
+              <td data-label="Tech Stack">PHP, MySQL, HTML, CSS</td>
+              <td data-label="Description">
+                A social networking platform prototype with profile management and
+                posting features, built on database-driven user interactions and a
+                custom authentication system.
+              </td>
+            </tr>
+            <tr>
+              <td class="category" data-label="Category">Systems Programming</td>
+              <td data-label="Project"><b>Mini VSFS — Virtual Simple File System</b></td>
+              <td data-label="Tech Stack">C, Linux, GCC</td>
+              <td data-label="Description">
+                A C-based virtual file system that simulates core OS storage structures —
+                superblocks, inodes, and directory entries. Ships with two utilities,
+                <code>mkfs_builder</code> and <code>mkfs_adder</code>, to initialize disk
+                images and insert files, with CRC32 checksum validation for integrity.
+              </td>
+            </tr>
+            <tr>
+              <td class="category" data-label="Category">AI / Machine Learning</td>
+              <td data-label="Project"><b>Deep Learning Based Bank Fraud Detection</b></td>
+              <td data-label="Tech Stack">Python, TensorFlow, Scikit-learn, Pandas, NumPy</td>
+              <td data-label="Description">
+                A fraud detection pipeline that uses deep learning to flag suspicious
+                financial transactions, including data preprocessing, feature engineering,
+                and model training to improve classification accuracy.
+              </td>
+            </tr>
+            <tr>
+              <td class="category" data-label="Category">Computer Graphics</td>
+              <td data-label="Project"><b>Amazing Bouncing Box Simulation</b></td>
+              <td data-label="Tech Stack">Python, PyOpenGL</td>
+              <td data-label="Description">
+                An interactive simulation of bouncing and blinking objects, with custom
+                motion logic, collision handling, and animation built directly on OpenGL.
+              </td>
+            </tr>
+            <tr>
+              <td colspan="4" style="text-align:center;">
+                <a href="projects.html">→ View full project details &amp; source links</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ================= HOBBIES PREVIEW ================= -->
+    <section class="wrap reveal" id="hobbies">
+      <p class="fig-label">FIG. 08 — OFF THE CLOCK</p>
+      <h2 class="section-title"><span class="num">07.</span> Hobbies &amp; Activities</h2>
+      <div class="card-row">
+        <a class="mini-card" href="hobbies.html#hobbies-list" style="color:inherit;">
+          <h3>Hobbies</h3>
+          <p>Competitive programming, photography, and gaming.</p>
+        </a>
+        <a class="mini-card" href="hobbies.html#sports-list" style="color:inherit;">
+          <h3>Sports</h3>
+          <p>Cricket, football, Swimming and table tennis.</p>
+        </a>
+        <a class="mini-card" href="hobbies.html#extracurricular-list" style="color:inherit;">
+          <h3>Extracurricular</h3>
+          <p>University tech club, hackathons, and volunteering.</p>
+        </a>
+      </div>
+      <p style="margin-top:1rem;"><a href="hobbies.html">→ See the full categorized list</a></p>
+    </section>
+
+    <!-- ================= CONTACT (BONUS) ================= -->
+    <section class="wrap reveal" id="contact">
+      <p class="fig-label">FIG. 09 — GET IN TOUCH</p>
+      <h2 class="section-title"><span class="num">08.</span> Contact</h2>
+      <div class="panel">
+        <form class="contact-form" action="mailto:fahimfaysaltamim2020@gmail.com" method="post" enctype="text/plain">
+          <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div>
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+          </div>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© 2026 MD. Fahim Faysal Tamim. All rights reserved.</p>
+      <p>Page location: <span id="page-location"></span></p>
+      <p>Last modified: <span id="last-modified"></span></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

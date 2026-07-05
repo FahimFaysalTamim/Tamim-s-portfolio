@@ -1,0 +1,480 @@
+/* =========================================================
+   TAMIM — Personal Homepage
+   Design concept: "Engineer's Blueprint"
+   A schematic / drafting-table aesthetic — grid paper, corner
+   tick-marks, and figure labels — because Tamim builds systems
+   (see the MiniVSFS project) rather than just apps.
+   ========================================================= */
+
+:root {
+  /* Color tokens */
+  --bg: #0b1d33;
+  --bg-grid: #12294a;
+  --panel: #102743;
+  --panel-border: #24466f;
+  --ink: #edeff2;
+  --ink-dim: #9fb0c8;
+  --muted: #7c8da6;
+  --accent: #e8a33d;
+  --accent-dim: #c8862a;
+  --teal: #3fa796;
+  --danger: #d9694f;
+
+  --font-display: 'JetBrains Mono', 'Courier New', monospace;
+  --font-body: 'Inter', -apple-system, Segoe UI, Roboto, sans-serif;
+
+  --radius: 2px;
+  --gap: 1.5rem;
+}
+
+/* Light theme override */
+body.light {
+  --bg: #f3f1ea;
+  --bg-grid: #e9e5d8;
+  --panel: #fffdf8;
+  --panel-border: #d8d2c0;
+  --ink: #16202c;
+  --ink-dim: #4a5a6b;
+  --muted: #6b7789;
+  --accent: #c8862a;
+  --accent-dim: #a86c1f;
+  --teal: #1f7a6c;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(var(--bg-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--bg-grid) 1px, transparent 1px);
+  background-size: 32px 32px;
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  transition: background-color .3s ease, color .3s ease;
+}
+
+img { max-width: 100%; display: block; }
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color .2s ease, color .2s ease;
+}
+a:hover, a:focus-visible { border-color: currentColor; }
+
+.wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ---------- Figure label utility (the "signature" element) ---------- */
+.fig-label {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-family: var(--font-display);
+  font-size: .72rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: .75rem;
+}
+.fig-label::before { content: "//"; color: var(--accent); }
+
+/* ---------- Header / Nav ---------- */
+header.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(11, 29, 51, 0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--panel-border);
+}
+body.light header.site-header { background: rgba(243, 241, 234, 0.92); }
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .9rem 0;
+}
+.brand {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--ink);
+  letter-spacing: .02em;
+}
+.brand span { color: var(--accent); }
+
+nav.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.4rem;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+nav.main-nav a {
+  font-family: var(--font-display);
+  font-size: .78rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--ink-dim);
+}
+nav.main-nav a:hover { color: var(--accent); }
+
+#theme-toggle {
+  font-family: var(--font-display);
+  font-size: .72rem;
+  background: transparent;
+  border: 1px solid var(--panel-border);
+  color: var(--ink-dim);
+  padding: .4rem .7rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  margin-left: 1rem;
+}
+#theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ---------- Hero ---------- */
+.hero {
+  padding: 4rem 0 3rem;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  border-bottom: 1px dashed var(--panel-border);
+}
+
+.hero-photo-frame {
+  position: relative;
+  width: 190px;
+  height: 190px;
+  border: 1px solid var(--accent);
+  padding: 8px;
+  border-radius: var(--radius);
+}
+.hero-photo-frame::before,
+.hero-photo-frame::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--accent);
+}
+.hero-photo-frame::before { top: -2px; left: -2px; border-right: none; border-bottom: none; }
+.hero-photo-frame::after { bottom: -2px; right: -2px; border-left: none; border-top: none; }
+.hero-photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius);
+  filter: grayscale(15%);
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  margin: 0 0 .3rem;
+  letter-spacing: -0.01em;
+}
+.hero .role {
+  color: var(--teal);
+  font-family: var(--font-display);
+  font-size: .95rem;
+  margin: 0 0 1rem;
+}
+.hero p.bio { max-width: 60ch; color: var(--ink-dim); margin: 0 0 1.1rem; }
+
+.hero-links { display: flex; gap: 1.1rem; flex-wrap: wrap; }
+.hero-links a {
+  font-family: var(--font-display);
+  font-size: .78rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  border: 1px solid var(--panel-border);
+  padding: .45rem .8rem;
+  border-radius: var(--radius);
+  color: var(--ink);
+}
+.hero-links a:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ---------- Sections ---------- */
+section { padding: 3.4rem 0; border-bottom: 1px dashed var(--panel-border); }
+section:last-of-type { border-bottom: none; }
+
+h2.section-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  margin: 0 0 1.6rem;
+  display: flex;
+  align-items: baseline;
+  gap: .6rem;
+}
+h2.section-title .num { color: var(--accent); font-size: 1rem; }
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius);
+  padding: 1.6rem;
+}
+
+/* ---------- About / Info grid ---------- */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+.info-card {
+  background: var(--panel);
+  border: 2px solid var(--panel-border);
+  border-left: 1px solid var(--teal);
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius);
+}
+.info-card dt {
+  font-family: var(--font-display);
+  font-size: .7rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--muted);
+  margin: 0 0 .3rem;
+}
+.info-card dd { margin: 0; font-weight: 600; overflow-wrap: anywhere; word-break: break-word; }
+
+/* ---------- Education timeline ---------- */
+.edu-item { display: flex; gap: 1.4rem; }
+.edu-year {
+  font-family: var(--font-display);
+  color: var(--accent);
+  min-width: 130px;
+  font-size: .85rem;
+  padding-top: .2rem;
+}
+.edu-body h3 { margin: 0 0 .2rem; font-size: 1.15rem; }
+.edu-body p { margin: 0; color: var(--ink-dim); }
+
+/* ---------- Skills ---------- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+}
+.skill-block {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.2rem;
+}
+.skill-block h3 {
+  font-family: var(--font-display);
+  font-size: .82rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--teal);
+  margin: 0 0 .7rem;
+}
+.tag-list { display: flex; flex-wrap: wrap; gap: .4rem; list-style: none; margin: 0; padding: 0; }
+.tag-list li {
+  font-size: .8rem;
+  border: 1px solid var(--panel-border);
+  padding: .25rem .6rem;
+  border-radius: 20px;
+  color: var(--ink-dim);
+}
+
+/* ---------- Quote ---------- */
+blockquote.quote {
+  margin: 0;
+  padding: 1.6rem 1.8rem;
+  border-left: 3px solid var(--accent);
+  background: var(--panel);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.9;
+}
+blockquote.quote cite {
+  display: block;
+  margin-top: 1rem;
+  font-style: normal;
+  font-size: .8rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+/* ---------- Books list ---------- */
+ol.book-list {
+  columns: 2;
+  column-gap: 2rem;
+  padding-left: 1.2rem;
+}
+ol.book-list li { margin-bottom: .6rem; break-inside: avoid; }
+ol.book-list b { color: var(--ink); }
+ol.book-list span.author { color: var(--muted); font-size: .88rem; }
+
+/* ---------- Responsive Table ---------- */
+.table-scroll { overflow-x: auto; }
+table.projects-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 640px;
+  font-size: .92rem;
+}
+table.projects-table caption {
+  text-align: left;
+  font-family: var(--font-display);
+  font-size: .78rem;
+  color: var(--muted);
+  margin-bottom: .6rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+table.projects-table th, table.projects-table td {
+  border: 1px solid var(--panel-border);
+  padding: .8rem .9rem;
+  text-align: left;
+  vertical-align: top;
+}
+table.projects-table thead th {
+  background: var(--panel-border);
+  font-family: var(--font-display);
+  font-size: .74rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--ink);
+}
+table.projects-table tbody tr:nth-child(even) { background: rgba(63, 167, 150, 0.06); }
+table.projects-table tbody tr:hover { background: rgba(232, 163, 61, 0.12); }
+table.projects-table td.category { font-family: var(--font-display); color: var(--teal); font-size: .8rem; }
+
+@media (max-width: 680px) {
+  table.projects-table thead { display: none; }
+  table.projects-table, table.projects-table tbody, table.projects-table tr, table.projects-table td {
+    display: block; width: 100%;
+  }
+  table.projects-table tr { margin-bottom: 1rem; border: 1px solid var(--panel-border); border-radius: var(--radius); overflow: hidden; }
+  table.projects-table td { border: none; border-bottom: 1px solid var(--panel-border); }
+  table.projects-table td:last-child { border-bottom: none; }
+  table.projects-table td::before {
+    content: attr(data-label);
+    display: block;
+    font-family: var(--font-display);
+    font-size: .68rem;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: var(--muted);
+    margin-bottom: .25rem;
+  }
+}
+
+/* ---------- Hobbies preview cards ---------- */
+.card-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+.mini-card {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius);
+  padding: 1.2rem;
+  transition: transform .2s ease, border-color .2s ease;
+}
+.mini-card:hover { transform: translateY(-4px); border-color: var(--accent); }
+.mini-card h3 { margin: 0 0 .4rem; font-size: 1rem; }
+.mini-card p { margin: 0; color: var(--ink-dim); font-size: .9rem; }
+
+/* ---------- Contact form (bonus) ---------- */
+form.contact-form { display: grid; gap: 1rem; max-width: 520px; }
+form.contact-form label {
+  font-family: var(--font-display);
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  color: var(--muted);
+  display: block;
+  margin-bottom: .35rem;
+}
+form.contact-form input, form.contact-form textarea {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--panel-border);
+  color: var(--ink);
+  padding: .7rem .8rem;
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+}
+form.contact-form input:focus, form.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+form.contact-form button {
+  justify-self: start;
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  font-size: .82rem;
+  background: var(--accent);
+  color: #12213a;
+  border: none;
+  padding: .75rem 1.4rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background .2s ease;
+}
+form.contact-form button:hover { background: var(--accent-dim); }
+
+/* ---------- Footer ---------- */
+footer.site-footer {
+  padding: 2rem 0 3rem;
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: .75rem;
+  color: var(--muted);
+}
+footer.site-footer p { margin: .3rem 0; }
+
+/* ---------- Scroll reveal animation (bonus) ---------- */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.in-view { opacity: 1; transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* ---------- Responsive tweaks ---------- */
+@media (max-width: 720px) {
+  .hero { grid-template-columns: 1fr; text-align: center; }
+  .hero-photo-frame { margin: 0 auto; }
+  .hero-links { justify-content: center; }
+  .edu-item { flex-direction: column; gap: .4rem; }
+  ol.book-list { columns: 1; }
+  nav.main-nav ul { gap: .9rem; }
+}
+
+/* ---------- Sub-page hero banner (hobbies/projects pages) ---------- */
+.page-banner {
+  position: relative;
+  padding: 3rem 0;
+  border-bottom: 1px dashed var(--panel-border);
+}
+.page-banner img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 1px solid var(--panel-border);
+  filter: grayscale(30%) brightness(.8);
+}
+.page-banner h1 {
+  font-family: var(--font-display);
+  margin-top: 1.2rem;
+}
